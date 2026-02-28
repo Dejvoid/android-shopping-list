@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Inventory Manager</string>
+    <string name="app_title">Shopping app</string>
+    
+    <!-- Drawer -->
+    <string name="drawer_title">Inventory Manager</string>
+    <string name="drawer_storage_list">Storage List</string>
+    <string name="drawer_shopping_list">Shopping List</string>
+
+    <!-- List Screen -->
+    <string name="list_empty">List is empty</string>
+    <string name="list_error">Error loading products</string>
+    <string name="list_export_button">Export Selected (%1$d)</string>
+    <string name="list_export_confirm_title">Export to Storage</string>
+    <string name="list_export_confirm_text">Are you sure you want to export selected items to storage and delete them from the shopping list?</string>
+    <string name="list_export_success">Selected items exported to Storage</string>
+
+    <!-- Detail Screen -->
+    <string name="detail_title">Product Detail</string>
+    <string name="detail_identifier_label">Product identifier</string>
+    <string name="detail_count_label">Count</string>
+    <string name="detail_expiry_label">Expiry Date</string>
+    <string name="detail_save_add">Add Product</string>
+    <string name="detail_save_update">Update Product</string>
+    <string name="detail_delete_button">Delete Product</string>
+    <string name="detail_delete_confirm_title">Delete Product</string>
+    <string name="detail_delete_confirm_text">Are you sure you want to delete this product? This action cannot be undone.</string>
+    <string name="detail_cancel">Cancel</string>
+    <string name="detail_select_date">Select date</string>
+    
+    <!-- Product Tags -->
+    <string name="tag_out_of_stock">Out of Stock</string>
+    <string name="tag_expired">Expired</string>
+    <string name="tag_expiring_soon">Expiring Soon</string>
+    
+    <!-- Common -->
+    <string name="confirm">Confirm</string>
+    <string name="export">Export</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="menu_content_description">Menu</string>
+    <string name="edit_content_description">Edit product</string>
+</resources>
