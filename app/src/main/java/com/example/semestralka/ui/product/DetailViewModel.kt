@@ -17,9 +17,12 @@ class DetailViewModel(private val storage: ProductListApi) : ViewModel() {
     val state: StateFlow<DetailState> = _state
 
     private var originalProduct: ProductData? = null
+    private var isLoaded = false
 
     fun loadProduct(identifier: String?) {
-        if (identifier == null) return
+        // If it's already loaded or we're adding a new product, don't reload
+        if (identifier == null || isLoaded) return
+        
         viewModelScope.launch {
             storage.getByIdentifier(identifier).onSuccess { product ->
                 originalProduct = product
@@ -30,6 +33,7 @@ class DetailViewModel(private val storage: ProductListApi) : ViewModel() {
                         expiry = product.expiry
                     )
                 }
+                isLoaded = true
             }
         }
     }
@@ -50,7 +54,6 @@ class DetailViewModel(private val storage: ProductListApi) : ViewModel() {
         viewModelScope.launch {
             val currentState = _state.value
             if (originalProduct != null) {
-                // Update existing product
                 val updatedProduct = originalProduct!!.copy(
                     identifier = currentState.identifier,
                     count = currentState.count,
@@ -60,7 +63,6 @@ class DetailViewModel(private val storage: ProductListApi) : ViewModel() {
                     onSuccess()
                 }
             } else {
-                // Add new product
                 val newProduct = ProductData(
                     id = 0,
                     identifier = currentState.identifier,
